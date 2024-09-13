@@ -24,6 +24,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 main {
@@ -33,9 +34,11 @@ main {
 }
 
 .container {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    box-sizing: border-box;
 }
 
 header {
@@ -56,6 +59,7 @@ header {
     align-items: center;
 }
 
+/* Responsive logo styles */
 .logo {
     max-height: 120px;
     width: auto;
@@ -184,6 +188,15 @@ nav ul li a:hover {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* Ensure all content respects container boundaries */
+.section, .hero-section, footer {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 /* Services Styles */
@@ -633,6 +646,7 @@ footer {
     margin-top: 60px;
 }
 
+/* Media queries for responsiveness */
 @media (max-width: 768px) {
     main {
         padding: 20px 0;
@@ -643,64 +657,76 @@ footer {
         margin-bottom: 20px;
     }
 
+    .container {
+        padding: 0 15px;
+    }
+
     .logo-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    .logo {
+        max-height: 80px;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .logo-wrapper {
         flex-direction: column;
         align-items: center;
     }
 
+    .logo-wrapper h1 {
+        font-size: 2.5em;
+        text-align: center;
+    }
+
+    nav {
+        padding: 10px 0;
+    }
+
     nav ul {
-        margin-top: 25px;
         flex-wrap: wrap;
         justify-content: center;
     }
 
     nav ul li {
-        margin: 8px;
-    }
-
-    .hero-title {
-        font-size: 2.5em;
-    }
-    
-    .logo-wrapper h1 {
-        font-size: 3.5em;
+        margin: 5px;
     }
 
     nav ul li a {
-        font-size: 1.1em;
-        padding: 10px 15px;
+        font-size: 1em;
+        padding: 8px 12px;
     }
-    
+
+    .hero-title {
+        font-size: 2em;
+    }
+
     .hero-subtitle {
-        font-size: 1.2em;
+        font-size: 1em;
     }
-    
+
     .services-grid, .projects-grid, .portfolio-grid, .team-grid, .about-grid, .contact-grid {
         grid-template-columns: 1fr;
     }
 
     .service-item, .service-process, .about-item, .contact-form, .contact-info {
-        padding: 20px;
+        padding: 15px;
     }
 
     .team-stats {
         flex-direction: column;
     }
 
-    .team-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .team-member {
-        padding: 15px;
-    }
-
     .stat {
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
 
     .cta-section {
-        padding: 40px 20px;
+        padding: 30px 15px;
     }
 
     .social-links {
@@ -712,3 +738,19 @@ footer {
         margin-bottom: 10px;
     }
 }
+
+@media (max-width: 480px) {
+    .logo {
+        max-height: 60px;
+    }
+
+    .logo-wrapper h1 {
+        font-size: 2em;
+    }
+
+    nav ul li a {
+        font-size: 0.9em;
+        padding: 6px 10px;
+    }
+}
+
