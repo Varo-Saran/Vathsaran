@@ -1,0 +1,714 @@
+/* Font imports */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@300;400;700&display=swap');
+
+/* CSS Variables for consistent styling */
+:root {
+    --glow-color: rgba(255, 255, 255, 0.5);
+    --enhanced-glow-color: rgba(169, 254, 90, 0.851);
+    --text-color: rgba(255, 255, 255, 0.8);
+    --background-color: rgba(0, 0, 0, 0.6);
+    --accent-color: #a9fe5a;
+    --secondary-color: #4a4a4a;
+    --heading-font: 'Orbitron', sans-serif;
+    --body-font: 'Roboto', sans-serif;
+}
+
+body {
+    background: url('hero-background-1.jpg') center/cover no-repeat fixed;
+    font-family: var(--body-font);
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    line-height: 1.6;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    background-color: transparent;
+    padding: 40px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: #000000;
+    padding: 20px 0;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    background-color: transparent;
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    max-height: 120px;
+    width: auto;
+    margin-right: 15px;
+    filter: drop-shadow(0 0 10px var(--glow-color)) 
+            drop-shadow(0 0 50px var(--glow-color)) 
+            drop-shadow(0 0 100px var(--glow-color));
+    transition: filter 0.3s ease;
+}
+
+.logo-wrapper h1 {
+    font-family: var(--heading-font);
+    font-size: 4.5em;
+    color: #FFFFFF;
+    margin: 0;
+    text-shadow: 0 0 5px var(--glow-color),
+                 0 0 20px var(--glow-color),
+                 0 0 40px var(--glow-color);
+    transition: text-shadow 0.3s ease;
+}
+
+.logo-wrapper:hover .logo {
+    filter: drop-shadow(0 0 10px var(--enhanced-glow-color)) 
+            drop-shadow(0 0 50px var(--enhanced-glow-color)) 
+            drop-shadow(0 0 100px var(--enhanced-glow-color));
+}
+
+.logo-wrapper:hover h1 {
+    text-shadow: 0 0 5px var(--enhanced-glow-color),
+                 0 0 10px var(--enhanced-glow-color),
+                 0 0 40px var(--enhanced-glow-color);
+}
+
+.header-separator {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--accent-color), transparent);
+    margin: 15px 0;
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+    transition: margin 0.3s ease;
+}
+
+nav ul li a {
+    font-family: var(--heading-font);
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.3em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    padding: 12px 18px;
+    display: inline-block;
+}
+
+nav ul li:hover {
+    margin: 0 20px;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+    text-shadow: 0 0 10px rgba(169, 254, 90, 1), 
+                 0 0 50px rgba(169, 254, 90, 1), 
+                 0 0 100px rgba(169, 254, 90, 1);
+    transform: scale(1.1);
+}
+
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('hero-background-1.jpg') center/cover no-repeat;
+}
+
+.hero-title {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-subtitle {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    max-width: 600px;
+}
+
+.hero-button, .btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.hero-button:hover, .btn:hover {
+    background-color: var(--enhanced-glow-color);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--glow-color);
+}
+
+.section {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Services Styles */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(169, 254, 90, 0.3);
+}
+
+.service-item h3 {
+    color: var(--accent-color);
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.service-item ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.service-item ul li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.service-item ul li::before {
+    content: "•";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+}
+
+.service-process {
+    margin-top: 60px;
+    background-color: rgba(169, 254, 90, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.service-process h3 {
+    color: var(--accent-color);
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.service-process ol {
+    text-align: left;
+    padding-left: 20px;
+}
+
+.service-process ol li {
+    margin-bottom: 15px;
+}
+
+.service-process ol li strong {
+    color: var(--accent-color);
+}
+
+/* About page styles */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.about-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(169, 254, 90, 0.3);
+}
+
+.values-list, .expertise-list {
+    list-style-type: none;
+    padding-left: 0;
+    text-align: left;
+}
+
+.values-list li, .expertise-list li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.values-list li::before, .expertise-list li::before {
+    content: "•";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+}
+
+.about-cta {
+    margin-top: 60px;
+    background-color: rgba(169, 254, 90, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.about-cta h3 {
+    color: var(--accent-color);
+}
+
+/* Existing styles for other sections */
+.projects-grid, .portfolio-grid, .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.project-card, .portfolio-item, .team-member {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover, .portfolio-item:hover, .team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(169, 254, 90, 0.3);
+}
+
+.project-image, .portfolio-item img, .team-member img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.project-title, .portfolio-item h3, .team-member h3 {
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+.view-portfolio-btn {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.portfolio-filter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+}
+
+.testimonials {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 60px 0;
+}
+
+.testimonial-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 30px;
+}
+
+.testimonial {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.testimonial cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    color: var(--accent-color);
+}
+
+.cta-section {
+    background-color: rgba(169, 254, 90, 0.1);
+    padding: 60px 0;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.cta-section h3 {
+    color: var(--accent-color);
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.cta-section p {
+    margin-bottom: 30px;
+}
+
+.team-philosophy {
+    background-color: rgba(169, 254, 90, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+.team-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.team-member {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(169, 254, 90, 0.3);
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.team-member h3 {
+    color: var(--accent-color);
+    font-size: 1.4em;
+    margin-bottom: 5px;
+}
+
+.team-member .role {
+    color: #ffffff;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.team-member .description {
+    font-size: 0.9em;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    margin-bottom: 25px;
+    flex-grow: 1; /* Allow description to expand and push skills to the bottom */
+}
+
+.team-member:hover .description {
+    opacity: 1;
+}
+
+.stat {
+    text-align: center;
+    padding: 20px;
+}
+
+.stat h4 {
+    font-size: 2.5em;
+    color: var(--accent-color);
+    margin-bottom: 5px;
+}
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: auto; /* Push skills to the bottom */
+}
+
+.skill-tag {
+    display: inline-block;
+    background-color: rgba(169, 254, 90, 0.2);
+    color: var(--accent-color);
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8em;
+    transition: all 0.3s ease;
+    width: 80%;
+    max-width: 200px;
+    text-align: center;
+}
+
+
+.skill-tag:hover {
+    background-color: rgba(169, 254, 90, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(169, 254, 90, 0.2);
+}
+
+.join-team {
+    margin-top: 40px;
+    padding: 30px;
+    background-color: rgba(169, 254, 90, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.contact-form, .contact-info {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--accent-color);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--accent-color);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    border-radius: 5px;
+}
+
+.form-group textarea {
+    height: 150px;
+}
+
+.contact-info ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.contact-info ul li {
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    color: var(--accent-color);
+    text-decoration: underline;
+    transition: all 0.3s ease;
+}
+
+.contact-info a:hover {
+    text-shadow: 0 0 10px var(--accent-color),
+                 0 0 20px var(--accent-color);
+}
+
+/* Styles for Contact Information and Connect With Us headings */
+.contact-form h3,
+.contact-info h3,
+.social-links h3 {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px var(--glow-color),
+                 0 0 20px var(--glow-color);
+}
+
+.social-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.social-links li {
+    flex: 1;
+    text-align: center;
+}
+
+.social-links a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: inline-block;
+    padding: 5px 10px;
+}
+
+.social-links a:hover {
+    color: var(--enhanced-glow-color);
+}
+
+footer {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 60px;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 20px 0;
+    }
+
+    .section {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .logo-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        margin-top: 25px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 8px;
+    }
+
+    .hero-title {
+        font-size: 2.5em;
+    }
+    
+    .logo-wrapper h1 {
+        font-size: 3.5em;
+    }
+
+    nav ul li a {
+        font-size: 1.1em;
+        padding: 10px 15px;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2em;
+    }
+    
+    .services-grid, .projects-grid, .portfolio-grid, .team-grid, .about-grid, .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-item, .service-process, .about-item, .contact-form, .contact-info {
+        padding: 20px;
+    }
+
+    .team-stats {
+        flex-direction: column;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .team-member {
+        padding: 15px;
+    }
+
+    .stat {
+        margin-bottom: 20px;
+    }
+
+    .cta-section {
+        padding: 40px 20px;
+    }
+
+    .social-links {
+        flex-wrap: wrap;
+    }
+
+    .social-links li {
+        flex-basis: 50%;
+        margin-bottom: 10px;
+    }
+}
