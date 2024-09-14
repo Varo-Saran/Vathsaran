@@ -13,6 +13,7 @@
     --body-font: 'Roboto', sans-serif;
 }
 
+/* Global Styles */
 body {
     background: url('hero-background-1.jpg') center/cover no-repeat fixed;
     font-family: var(--body-font);
@@ -24,7 +25,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden;
 }
 
 main {
@@ -41,9 +42,27 @@ main {
     box-sizing: border-box;
 }
 
-header {
+/* Header and Logo */
+.site-header {
     background-color: #000000;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.header-content {
     padding: 20px 0;
+    transition: all 0.3s ease;
+}
+
+.header-separator {
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--accent-color), transparent);
+    margin: 15px 0;
+    transition: opacity 0.3s ease;
 }
 
 .logo-container {
@@ -52,16 +71,17 @@ header {
     align-items: center;
     padding: 20px 0;
     background-color: transparent;
+    transition: padding 0.3s ease;
 }
 
 .logo-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: nowrap; /* Prevent wrapping */
+    flex-wrap: nowrap;
+    transition: all 0.3s ease;
 }
 
-/* Responsive logo styles */
 .logo {
     max-height: 120px;
     width: auto;
@@ -69,7 +89,7 @@ header {
     filter: drop-shadow(0 0 10px var(--glow-color)) 
             drop-shadow(0 0 50px var(--glow-color)) 
             drop-shadow(0 0 100px var(--glow-color));
-    transition: filter 0.3s ease;
+    transition: max-height 0.3s ease, filter 0.3s ease;
 }
 
 .logo-wrapper h1 {
@@ -80,7 +100,7 @@ header {
     text-shadow: 0 0 5px var(--glow-color),
                  0 0 20px var(--glow-color),
                  0 0 40px var(--glow-color);
-    transition: text-shadow 0.3s ease;
+    transition: font-size 0.3s ease, text-shadow 0.3s ease;
 }
 
 .logo-wrapper:hover .logo {
@@ -95,19 +115,63 @@ header {
                  0 0 40px var(--enhanced-glow-color);
 }
 
-.header-separator {
-    height: 1px;
-    background: linear-gradient(to right, transparent, var(--accent-color), transparent);
-    margin: 15px 0;
+
+
+/* Sticky Header Styles */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.site-header.sticky {
+    transform: translateY(-100%);
+}
+
+.site-header.sticky .header-content {
+    padding: 10px 0;
+}
+
+.site-header.sticky .logo-container {
+    padding: 5px 0;
+}
+
+.site-header.sticky .logo-wrapper h1 {
+    font-size: 2.5em;
+}
+
+
+
+.site-header.sticky .nav-container {
+    position: relative;
+    z-index: 1001; /* Ensure it's above other elements */
+}
+
+/* Navigation */
+.nav-container {
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: background-color 0.3s ease;
+}
+
+.nav-container.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 nav {
-    background-color: rgba(0, 0, 0, 0.6);
     padding: 15px 0;
 }
 
 nav ul {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     list-style-type: none;
     padding: 0;
@@ -115,7 +179,7 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0.5vh 1vw;
     transition: margin 0.3s ease;
 }
 
@@ -123,10 +187,10 @@ nav ul li a {
     font-family: var(--heading-font);
     color: var(--text-color);
     text-decoration: none;
-    font-size: 1.3em;
+    font-size: clamp(0.8rem, 2vw, 1.3rem);
     font-weight: bold;
     transition: all 0.3s ease;
-    padding: 12px 18px;
+    padding: 1vh 1.5vw;
     display: inline-block;
 }
 
@@ -142,7 +206,16 @@ nav ul li a:hover {
     transform: scale(1.1);
 }
 
+body {
+    padding-top: var(--header-height, 200px);
+    transition: padding-top 0.3s ease;
+}
+
+/* Hero Section */
 .hero-section {
+    min-height: calc(100vh - var(--header-height, 20vh));
+    padding: 2vh 2vw;
+    margin-top: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -154,20 +227,21 @@ nav ul li a:hover {
 }
 
 .hero-title {
-    font-size: 3em;
-    margin-bottom: 20px;
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    margin-bottom: 2vh;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-subtitle {
-    font-size: 1.5em;
-    margin-bottom: 30px;
-    max-width: 600px;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    margin-bottom: 3vh;
+    max-width: 90%;
 }
 
 .hero-button, .btn {
     display: inline-block;
-    padding: 15px 30px;
+    padding: 1.5vh 3vw;
+    font-size: clamp(0.8rem, 2vw, 1rem);
     background-color: var(--accent-color);
     color: var(--secondary-color);
     text-decoration: none;
@@ -182,36 +256,28 @@ nav ul li a:hover {
     box-shadow: 0 0 15px var(--glow-color);
 }
 
+/* Sections */
 .section {
     background-color: rgba(0, 0, 0, 0.6);
-    padding: 30px;
+    padding: 3vh 3vw;
     border-radius: 10px;
-    margin-bottom: 30px;
-    max-width: 1200px;
+    margin-bottom: 3vh;
+    max-width: 90%;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Ensure all content respects container boundaries */
-.section, .hero-section, footer {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-/* Services Styles */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3vh 3vw;
     margin-top: 40px;
 }
 
+/* Service Item Styles */
 .service-item {
     background-color: rgba(255, 255, 255, 0.1);
-    padding: 30px;
+    padding: 2vh 2vw;
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: left;
@@ -224,7 +290,7 @@ nav ul li a:hover {
 
 .service-item h3 {
     color: var(--accent-color);
-    font-size: 1.5em;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
     margin-bottom: 15px;
 }
 
@@ -247,6 +313,7 @@ nav ul li a:hover {
     font-size: 1.2em;
 }
 
+/* Service Process Styles */
 .service-process {
     margin-top: 60px;
     background-color: rgba(169, 254, 90, 0.1);
@@ -273,7 +340,7 @@ nav ul li a:hover {
     color: var(--accent-color);
 }
 
-/* About page styles */
+/* About Section */
 .about-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -313,6 +380,7 @@ nav ul li a:hover {
     font-size: 1.2em;
 }
 
+/* About CTA */
 .about-cta {
     margin-top: 60px;
     background-color: rgba(169, 254, 90, 0.1);
@@ -325,7 +393,7 @@ nav ul li a:hover {
     color: var(--accent-color);
 }
 
-/* Existing styles for other sections */
+/* Portfolio, Projects, and Team Sections */
 .projects-grid, .portfolio-grid, .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -361,6 +429,7 @@ nav ul li a:hover {
     margin-top: 20px;
 }
 
+/* Portfolio Filter */
 .portfolio-filter {
     display: flex;
     justify-content: center;
@@ -384,6 +453,7 @@ nav ul li a:hover {
     color: var(--secondary-color);
 }
 
+/* Testimonials */
 .testimonials {
     background-color: rgba(0, 0, 0, 0.6);
     padding: 60px 0;
@@ -413,6 +483,7 @@ nav ul li a:hover {
     color: var(--accent-color);
 }
 
+/* CTA Section */
 .cta-section {
     background-color: rgba(169, 254, 90, 0.1);
     padding: 60px 0;
@@ -430,6 +501,7 @@ nav ul li a:hover {
     margin-bottom: 30px;
 }
 
+/* Team Section */
 .team-philosophy {
     background-color: rgba(169, 254, 90, 0.1);
     padding: 30px;
@@ -442,62 +514,6 @@ nav ul li a:hover {
     justify-content: space-around;
     margin-top: 40px;
     flex-wrap: wrap;
-}
-
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.team-member {
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.team-member:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(169, 254, 90, 0.3);
-}
-
-.team-member img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 15px;
-    object-fit: cover;
-}
-
-.team-member h3 {
-    color: var(--accent-color);
-    font-size: 1.4em;
-    margin-bottom: 5px;
-}
-
-.team-member .role {
-    color: #ffffff;
-    font-size: 1.1em;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.team-member .description {
-    font-size: 0.9em;
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
-    margin-bottom: 25px;
-    flex-grow: 1; /* Allow description to expand and push skills to the bottom */
-}
-
-.team-member:hover .description {
-    opacity: 1;
 }
 
 .stat {
@@ -517,7 +533,7 @@ nav ul li a:hover {
     align-items: center;
     gap: 10px;
     width: 100%;
-    margin-top: auto; /* Push skills to the bottom */
+    margin-top: auto;
 }
 
 .skill-tag {
@@ -533,7 +549,6 @@ nav ul li a:hover {
     text-align: center;
 }
 
-
 .skill-tag:hover {
     background-color: rgba(169, 254, 90, 0.3);
     transform: translateY(-2px);
@@ -548,6 +563,7 @@ nav ul li a:hover {
     text-align: center;
 }
 
+/* Contact Section */
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -605,18 +621,7 @@ nav ul li a:hover {
                  0 0 20px var(--accent-color);
 }
 
-/* Styles for Contact Information and Connect With Us headings */
-.contact-form h3,
-.contact-info h3,
-.social-links h3 {
-    font-size: 1.8em;
-    font-weight: bold;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    text-shadow: 0 0 10px var(--glow-color),
-                 0 0 20px var(--glow-color);
-}
-
+/* Social Links */
 .social-links {
     display: flex;
     justify-content: space-between;
@@ -640,6 +645,7 @@ nav ul li a:hover {
     color: var(--enhanced-glow-color);
 }
 
+/* Footer */
 footer {
     background-color: var(--background-color);
     color: var(--text-color);
@@ -648,7 +654,31 @@ footer {
     margin-top: 60px;
 }
 
-/* Media queries for responsiveness */
+/* Media Queries */
+@media screen and (max-width: 1200px) {
+    /* Adjustments for high zoom levels or smaller screens */
+    .container {
+        width: 95%;
+        max-width: none;
+    }
+
+    .services-grid, .projects-grid, .portfolio-grid, .team-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .hero-title {
+        font-size: 2.5em;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2em;
+    }
+
+    .section {
+        padding: 20px;
+    }
+}
+    
 @media (max-width: 768px) {
     main {
         padding: 20px 0;
@@ -664,29 +694,23 @@ footer {
     }
 
     .logo-container {
-        flex-direction: row; /* row to keep logo and heading side by side */
+        flex-direction: row;
         justify-content: center;
         align-items: center;
         padding: 10px 0;
     }
 
     .logo {
-        max-height: 50px; /* Slightly reduce logo size */
-        margin-right: 10px; /* Add some space between logo and heading */
-        margin-bottom: 0; /* Remove bottom margin */
-    }
-
-    .logo-wrapper {
-        flex-direction: row; /* Keep logo and heading in a row */
-        align-items: center;
-        justify-content: flex-start; /* Align to the start on mobile */
+        max-height: 50px;
+        margin-right: 10px;
+        margin-bottom: 0;
     }
 
     .logo-wrapper h1 {
-        font-size: 1.8em; /* Reduce font size for better fit */
-        text-align: left; /* Align text to the left */
-        margin-left: 5px; /* Add some space after the logo */
-        white-space: nowrap; /* Prevent text wrapping */
+        font-size: 1.8em;
+        text-align: left;
+        margin-left: 5px;
+        white-space: nowrap;
     }
 
     nav {
@@ -747,11 +771,11 @@ footer {
 
 @media (max-width: 480px) {
     .logo {
-        max-height: 40px;  /* reduce logo size for very small screens */
+        max-height: 40px;
     }
 
     .logo-wrapper h1 {
-        font-size: 1.8em;  /* reduce font size for very small screens */
+        font-size: 1.8em;
     }
 
     nav ul li a {
@@ -759,3 +783,4 @@ footer {
         padding: 6px 10px;
     }
 }
+
