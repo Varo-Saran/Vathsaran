@@ -3,71 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vortixia</title>
+    <title>Vortixia - Innovative Solutions in Software, Data, and Design</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <div class="site-header">
+    <header class="site-header">
         <div class="header-content">
-          <div class="logo-container">
-            <div class="logo-wrapper">
-              <img src="CV.png" alt="Vortixia Logo" class="logo">
-              <h1>VORTIXIA</h1>
+            <div class="logo-container">
+                <div class="logo-wrapper">
+                    <img src="CV.png" alt="Vortixia Logo" class="logo">
+                    <h1>VORTIXIA</h1>
+                </div>
             </div>
-          </div>
         </div>
         <div class="header-separator"></div>
-        <div class="nav-container">
-          <nav>
+        <nav class="nav-container">
             <ul>
-              <li><a href="index.html">HOME</a></li>
-              <li><a href="about.html">ABOUT</a></li>
-              <li><a href="services.html">SERVICES</a></li>
-              <li><a href="portfolio.html">PORTFOLIO</a></li>
-              <li><a href="team.html">TEAM</a></li>
-              <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="index.html"><i class="fas fa-home"></i> HOME</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> ABOUT</a></li>
+                <li><a href="services.html"><i class="fas fa-cogs"></i> SERVICES</a></li>
+                <li><a href="portfolio.html"><i class="fas fa-briefcase"></i> PORTFOLIO</a></li>
+                <li><a href="team.html"><i class="fas fa-users"></i> TEAM</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> CONTACT</a></li>
             </ul>
-          </nav>
-        </div>
-      </div>
+        </nav>
+    </header>
 
     <main>
         <section class="hero-section">
             <h1 class="hero-title">Innovative Solutions in Software, Data, and Design</h1>
             <p class="hero-subtitle">Transforming ideas into powerful digital experiences</p>
-            <a href="#services" class="hero-button">Explore Our Services</a>
+            <a href="#services" class="hero-button"><i class="fas fa-chevron-right"></i> Explore Our Services</a>
         </section>
 
         <section id="about" class="section">
             <div class="container">
-                <h2>About Vortixia</h2>
+                <h2><i class="fas fa-info-circle"></i> About Vortixia</h2>
                 <p>At Vortixia, we combine expertise in software development, data analysis, and graphic design to deliver comprehensive digital solutions. Our unique approach integrates cutting-edge technology with data-driven insights and stunning visuals, empowering businesses to thrive in the digital landscape.</p>
             </div>
         </section>
 
-        <section id="services" class="section">
+        <div id="services" class="section section">
             <div class="container">
-                <h2>Our Services</h2>
-                <div class="services-grid">
-                    <div class="service-item">
-                        <h3>Software Development</h3>
-                        <p>Custom web and mobile applications built with the latest technologies to meet your specific business needs.</p>
-                    </div>
-                    <div class="service-item">
-                        <h3>Data Analysis</h3>
-                        <p>Transform raw data into actionable insights using advanced analytics and machine learning techniques.</p>
-                    </div>
-                    <div class="service-item">
-                        <h3>Graphic Design</h3>
-                        <p>Create visually stunning and user-friendly designs that elevate your brand and enhance user experience.</p>
-                    </div>
+              <h2 class="services-title">Our Services</h2>
+              <div class="services-grid">
+                <div class="service-item">
+                  <div class="service-header">
+                    <i class="fas fa-code service-icon"></i>
+                    <h3>Software & Web Development</h3>
+                  </div>
+                  <p>We create cutting-edge software and web solutions tailored to your specific business requirements.</p>
+                  <ul class="service-list">
+                    <li><i class="fas fa-check"></i>Custom Web Applications</li>
+                    <li><i class="fas fa-check"></i>Responsive Website Design</li>
+                    <li><i class="fas fa-check"></i>Mobile App Development</li>
+                    <li><i class="fas fa-check"></i>E-commerce Solutions</li>
+                  </ul>
                 </div>
+                
+                <div class="service-item">
+                  <div class="service-header">
+                    <i class="fas fa-chart-bar service-icon"></i>
+                    <h3>Data Analysis</h3>
+                  </div>
+                  <p>Transform your raw data into actionable insights that drive informed decision-making.</p>
+                  <ul class="service-list">
+                    <li><i class="fas fa-check"></i>Business Intelligence Solutions</li>
+                    <li><i class="fas fa-check"></i>Predictive Analytics</li>
+                    <li><i class="fas fa-check"></i>Big Data Processing</li>
+                    <li><i class="fas fa-check"></i>Machine Learning Models</li>
+                  </ul>
+                </div>
+                
+                <div class="service-item">
+                  <div class="service-header">
+                    <i class="fas fa-paint-brush service-icon"></i>
+                    <h3>Graphic Design</h3>
+                  </div>
+                  <p>Elevate your brand with visually stunning designs that captivate your audience.</p>
+                  <ul class="service-list">
+                    <li><i class="fas fa-check"></i>Brand Identity Design</li>
+                    <li><i class="fas fa-check"></i>UI/UX Design</li>
+                    <li><i class="fas fa-check"></i>Print and Digital Marketing Materials</li>
+                    <li><i class="fas fa-check"></i>Motion Graphics and Animation</li>
+                  </ul>
+                </div>
+                
+                <div class="service-item">
+                  <div class="service-header">
+                    <i class="fas fa-shield-alt service-icon"></i>
+                    <h3>Cybersecurity</h3>
+                  </div>
+                  <p>Protect your digital assets and ensure the integrity of your business operations.</p>
+                  <ul class="service-list">
+                    <li><i class="fas fa-check"></i>Network Security Assessment</li>
+                    <li><i class="fas fa-check"></i>Vulnerability Testing</li>
+                    <li><i class="fas fa-check"></i>Incident Response Management</li>
+                    <li><i class="fas fa-check"></i>Security Awareness Training</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-        </section>
+          </div>
 
-        <section class="featured-projects">
+        <section class="featured-projects section">
             <div class="container">
-                <h2>Featured Projects</h2>
+                <h2><i class="fas fa-star"></i> Featured Projects</h2>
                 <div class="projects-grid">
                     <div class="project-card">
                         <img src="/api/placeholder/400/200" alt="Project 1" class="project-image">
@@ -98,15 +140,15 @@
                         </div>
                     </div>
                 </div>
-                <a href="portfolio.html" class="view-portfolio-btn">View Full Portfolio</a>
+                <a href="portfolio.html" class="btn view-portfolio-btn">View Full Portfolio <i class="fas fa-arrow-right"></i></a>
             </div>
         </section>
 
         <section id="contact" class="section">
             <div class="container">
-                <h2>Get In Touch</h2>
+                <h2><i class="fas fa-envelope"></i> Get In Touch</h2>
                 <p>Ready to transform your ideas into reality? Contact us today!</p>
-                <a href="mailto:info@vortixia.com" class="btn">Contact Us</a>
+                <a href="contact.html" class="btn">Contact Us <i class="fas fa-paper-plane"></i></a>
             </div>
         </section>
     </main>
@@ -114,8 +156,15 @@
     <footer>
         <div class="container">
             <p>&copy; 2024 Vortixia. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
         </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
