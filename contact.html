@@ -3,77 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Vortixia - Get in Touch</title>
+    <title>Contact Us - Vortixia</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <div class="site-header">
+    <header class="site-header">
         <div class="header-content">
-          <div class="logo-container">
-            <div class="logo-wrapper">
-              <img src="CV.png" alt="Vortixia Logo" class="logo">
-              <h1>VORTIXIA</h1>
+            <div class="logo-container">
+                <div class="logo-wrapper">
+                    <img src="CV.png" alt="Vortixia Logo" class="logo">
+                    <h1>VORTIXIA</h1>
+                </div>
             </div>
-          </div>
         </div>
         <div class="header-separator"></div>
-        <div class="nav-container">
-          <nav>
+        <nav class="nav-container">
             <ul>
-              <li><a href="index.html">HOME</a></li>
-              <li><a href="about.html">ABOUT</a></li>
-              <li><a href="services.html">SERVICES</a></li>
-              <li><a href="portfolio.html">PORTFOLIO</a></li>
-              <li><a href="team.html">TEAM</a></li>
-              <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="index.html"><i class="fas fa-home"></i> HOME</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> ABOUT</a></li>
+                <li><a href="services.html"><i class="fas fa-cogs"></i> SERVICES</a></li>
+                <li><a href="portfolio.html"><i class="fas fa-briefcase"></i> PORTFOLIO</a></li>
+                <li><a href="team.html"><i class="fas fa-users"></i> TEAM</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> CONTACT</a></li>
             </ul>
-          </nav>
-        </div>
-      </div>
+        </nav>
+    </header>
 
-    <main>
+    <main role="main">
         <section id="contact" class="section">
             <div class="container">
-                <h2>Contact Us</h2>
+                <h2><i class="fas fa-paper-plane"></i> Contact Us</h2>
                 <p>Ready to bring your ideas to life or have any inquiries? We're here to help. Get in touch with us using the form below or through our contact information.</p>
 
                 <div class="contact-grid">
                     <div class="contact-form">
-                        <h3>Send us a message</h3>
+                        <h3><i class="fas fa-envelope"></i> Send us a message</h3>
                         <form action="#" method="POST">
                             <div class="form-group">
-                                <label for="name">Name</label>
+                                <label for="name"><i class="fas fa-user"></i> Name</label>
                                 <input type="text" id="name" name="name" required>
                             </div>
                             <div class="form-group">
-                                <label for="email">Email</label>
+                                <label for="email"><i class="fas fa-at"></i> Email</label>
                                 <input type="email" id="email" name="email" required>
                             </div>
                             <div class="form-group">
-                                <label for="subject">Subject</label>
+                                <label for="subject"><i class="fas fa-pen"></i> Subject</label>
                                 <input type="text" id="subject" name="subject" required>
                             </div>
                             <div class="form-group">
-                                <label for="message">Message</label>
+                                <label for="message"><i class="fas fa-comment"></i> Message</label>
                                 <textarea id="message" name="message" required></textarea>
                             </div>
-                            <button type="submit" class="btn">Send Message</button>
+                            <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Send Message</button>
                         </form>
                     </div>
+
                     <div class="contact-info">
-                        <h3>Contact Information</h3>
-                        <ul>
-                            <li><strong>Email:</strong> <a href="mailto:varosaran@gmail.com">varosaran@gmail.com</a></li>
-                            <li><strong>Phone:</strong> <a href="tel:+94777275526">+94 777 275 526</a></li>
-                            <li><strong>Address:</strong> 69 Brooks avenue, Wellawatte, Colombo, Sri Lanka</li>
-                        </ul>
-                        <h3>Connect With Us</h3>
-                        <ul class="social-links">
-                            <li><a href="#" target="_blank">LinkedIn</a></li>
-                            <li><a href="#" target="_blank">X (Twitter)</a></li>
-                            <li><a href="#" target="_blank">Facebook</a></li>
-                            <li><a href="#" target="_blank">Instagram</a></li>
-                        </ul>
+                        <h3><i class="fas fa-info-circle"></i> Contact Information</h3>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <i class="contact-icon fas fa-envelope"></i>
+                                <div class="contact-text">
+                                    <div class="contact-label">Email:</div>
+                                    <div class="contact-value">
+                                        <a href="mailto:varosaran@gmail.com">varosaran@gmail.com</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="contact-icon fas fa-phone-alt"></i>
+                                <div class="contact-text">
+                                    <div class="contact-label">Phone:</div>
+                                    <div class="contact-value">
+                                        <a href="tel:+94777275526">+94 777 275 526</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="contact-icon fas fa-map-marker-alt"></i>
+                                <div class="contact-text">
+                                    <div class="contact-label">Address:</div>
+                                    <div class="contact-value">
+                                        69 Brooks avenue, Wellawatte,<br>Colombo, Sri Lanka
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3><i class="fas fa-share-alt"></i> Connect With Us</h3>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -82,9 +106,10 @@
 
     <footer>
         <div class="container">
-            © 2024 Vortixia. All rights reserved.
+            <p>&copy; 2024 Vortixia. All rights reserved.</p>
         </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
